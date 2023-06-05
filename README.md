@@ -63,7 +63,7 @@ See below for how the Github repo is structured and the files that are needed to
 5. Build and run the Docker container via one of the options below:
  - **Shell:** Run the `build_and_run.sh` shell script: `./build_and_run.sh`
  - **Manually:** `docker-compose up -d --build`
- - **Note:** The shell script first runs `docker-compose down` to resolve conflicts with ports and container names upon rebuilding containers. You can run the `docker-compose down` line manually/separately in the terminal as well. This command will stop and remove existing containers. 
+ - **Note:** The shell script first runs `docker-compose down` to resolve conflicts with ports and container names upon rebuilding containers. If you're running the command manually, you can first run `docker ps` in the terminal to check for existing containers. Then, run `docker-compose down` to stop and remove existing containers. 
 6. Access the application via one of the options below:
  - **Shell:** Run the `run_app.sh` shell script to make curl requests to the API endpoint: `./run_app.sh`. The shell script `run_app.sh` returns the JSON response for the `/etl-results` endpoint in tabular format.
  - **Manually:** Use the terminal to run command `curl -s http://127.0.0.1:5000/api-endpoint`. Replace **api-endpoint** with the endpoint you want to access. Note that `curl -s http://127.0.0.1:5000/etl-results` will return the data as a JSON object.
