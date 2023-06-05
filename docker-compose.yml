@@ -1,0 +1,27 @@
+version: "3"
+
+services:
+  db:
+    container_name: eikon-db
+    restart: always
+    build:
+      context: .
+      dockerfile: Dockerfile-postgres
+    ports:
+      - "5432:5432"
+    volumes:
+      - ./init.sql:/docker-entrypoint-initdb.d/init.sql
+
+  app:
+    container_name: eikon-app
+    restart: always
+    build:
+      context: .
+      dockerfile: Dockerfile-app
+    ports:
+      - "5000:5000"
+    volumes:
+      - .:/app
+    depends_on:
+      - db
+    command: gunicorn app:app --bind 0.0.0.0:5000

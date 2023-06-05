@@ -1,0 +1,12 @@
+# Dockerfile to build PostgreSQL image
+FROM postgres:latest
+
+ENV POSTGRES_USER="labuser"
+ENV POSTGRES_PASSWORD="eikon-rules-,.bqzBwX6.}*"
+ENV POSTGRES_DB="eikon_db"
+
+COPY init.sql /docker-entrypoint-initdb.d/
+
+EXPOSE 5432
+
+CMD ["postgres"]
