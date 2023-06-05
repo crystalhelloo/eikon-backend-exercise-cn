@@ -139,3 +139,5 @@ Retrieves the results of the ETL process. Returns JSON response containing the E
 - Application is only validated with the provided input files in the `data` folder. Include testing with more input files to expose edge cases to improve error handling and logging for easier troubleshooting. Set up text fixtures and unit testing.
 - Potentially add other API requests such as `PUT`,`PATCH`,`DELETE` to add more flexibility to the ETL process and if the scope of the API is expanded.
 - This API is user-triggered which might be preferred, but assess whether the ETL process should be triggered automatically, such as by using airflow to manage and schedule ETL workflows.
+
+**Thank you for taking a look! If there are any questions and feedback, then please let me know!**
